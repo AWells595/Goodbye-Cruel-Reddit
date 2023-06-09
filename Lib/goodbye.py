@@ -13,12 +13,11 @@ def get_authentication_details():
     user_details.append(client_id)
     client_secret = input("Please enter your secret key: ")
     user_details.append(client_secret)
-
     return user_details
 
 
 def checkpoint():
-    return input("Modifying your post history is final, please type yes to confirm you wish to proceed")
+    return input("Modifying your post history is final, please type yes to confirm you wish to proceed. ")
 
 
 if __name__ == "__main__":
@@ -35,7 +34,7 @@ if __name__ == "__main__":
                 client_id=details[2],
                 client_secret=details[3],
                 password=details[1],
-                user_agent="Boof it Bot (by u/TheodoBharbrot)",
+                user_agent="Goodbye Reddit",
                 username=details[0]
             )
 
@@ -57,3 +56,5 @@ if __name__ == "__main__":
         comment.edit(my_statement)
     for submission in user.submissions.new(limit=None):
         submission.delete()
+    
+    print("Account scrubbing complete, remember to delete your Reddit account")
